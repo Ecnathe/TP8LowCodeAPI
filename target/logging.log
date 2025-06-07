@@ -1,0 +1,3 @@
+06/06/25 23:50:02 INFO  BasicHook:20 - ------ Starting -----Unauthorized-----
+06/06/25 23:50:03 INFO  RestClient:166 - >>>Error Response: org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: "{"message":"Api key does not exist","code":4003}"
+06/06/25 23:50:03 INFO  BasicHook:25 - ------ Ending -----Unauthorized-----

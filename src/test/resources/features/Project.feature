@@ -94,7 +94,7 @@ Feature: Project
     When execute method GET
     Then the status code should be 400
 
-  @Unauthorized @Error @Do
+  @Unauthorized @Error
   Scenario: Unauthorized
     Given endpoint /v1/workspaces/idWorkspace/project/
     And header x-api-key = "YTFlNWYzOGUtODdkYS00NzI3LWJkZjYtNDM1ZDRiMTUyYmI"

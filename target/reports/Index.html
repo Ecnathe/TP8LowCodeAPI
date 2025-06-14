@@ -48,7 +48,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">jun 6, 2025 11:50:01 p. m.</span>
+                    <span class="badge badge-primary">jun 14, 2025 06:26:58 p. m.</span>
                 </a>
             </li>
         </ul>
@@ -115,9 +115,8 @@
 					<i class="fa fa-tag"></i>
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" href="#">@Smoke</a>
-						<a class="dropdown-item" href="#">@Unauthorized</a>
-						<a class="dropdown-item" href="#">@Error</a>
+						<a class="dropdown-item" href="#">@Smoke@TimeEntry</a>
+						<a class="dropdown-item" href="#">@getTimeEntriesForUsers</a>
 						<a class="dropdown-item" href="#">@Do</a>
 					</ul>
 				</li>
@@ -127,29 +126,29 @@
 			<ul class="test-list-item">
 				<li class="test-item"  status="pass" test-id="1"
 					author=""
-					tag="@Smoke"
+					tag="@Smoke@TimeEntry"
 					device="">
 					<div class="status-avatar pass-bg">
 						<i class="fa fa-check text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">Project</p>
-							<p class="duration text-sm">0h 0m 1s+30ms</p>
-							<span class="datetime">23:50:02 p. m.</span>
+							<p class="name">Time Entry</p>
+							<p class="duration text-sm">0h 0m 1s+528ms</p>
+							<span class="datetime">18:26:59 p. m.</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">Project</h5>
-									<span class='badge badge-success'>06.06.2025 23:50:02</span>
-									<span class='badge badge-danger'>06.06.2025 23:50:03</span>
-									<span class='badge badge-default'>0h 0m 1s+30ms</span>
+									<h5 class="test-status text-pass">Time Entry</h5>
+									<span class='badge badge-success'>06.14.2025 18:26:59</span>
+									<span class='badge badge-danger'>06.14.2025 18:27:00</span>
+									<span class='badge badge-default'>0h 0m 1s+528ms</span>
 								</div>
 								<div class="m-t-15">
-			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @Smoke</span>
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @Smoke@TimeEntry</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -161,7 +160,7 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Unauthorized</div>
+				<div class="node">Get all time entries for user</div>
 				<div class="status-avatar float-left pass-bg">
 					<i class="fa fa-check text-white"></i>
 				</div>
@@ -176,25 +175,32 @@
 								<span>And base url https://api.clockify.me/api</span>
 							</div>
 				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start given" title="StepsInCommon.setEndpoint(String)">
+							<div class="d-flex align-items-center justify-content-start given" title="StepsInCommon.call(String,String,String)">
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>Given endpoint /v1/workspaces/idWorkspace/project/</span>
+								<span>Given call Project.feature@getAllWorkspaces</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start given" title="StepsInCommon.call(String,String,String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given call TimeEntry.feature@getUserId</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="StepsInCommon.setEndpoint(String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And endpoint /v1/workspaces/{{idWorkspace}}/user/{{userId}}/time-entries</span>
 							</div>
 				<div class="details"></div>
 							<div class="d-flex align-items-center justify-content-start and" title="StepsInCommon.setHeader(String,String)">
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>And header x-api-key = "YTFlNWYzOGUtODdkYS00NzI3LWJkZjYtNDM1ZDRiMTUyYmI"</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="StepsInCommon.setHeader(String,String)">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And header Content-Type = "application/json"</span>
+								<span>And header x-api-key = "YTFlNWYzOGUtODdkYS00NzI3LWJkZjYtNDM1ZDRiMTUyYmIx"</span>
 							</div>
 				<div class="details"></div>
 							<div class="d-flex align-items-center justify-content-start when" title="StepsInCommon.setHttpMethodAndExecute(String)">
@@ -208,7 +214,7 @@
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>Then the status code should be 401</span>
+								<span>Then the status code should be 200</span>
 							</div>
 				<div class="details"></div>
 					</div>
@@ -247,7 +253,7 @@
 			<ul class="tools text-right">
 				<li>
 					<a href="#">
-					<span class="badge badge-primary">4</span>
+					<span class="badge badge-primary">3</span>
 					</a>
 				</li>
 			</ul>
@@ -257,7 +263,7 @@
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">@Smoke</p>
+							<p class="name">@Smoke@TimeEntry</p>
 							<p class="duration text-sm">2 tests</p>
 							<span class="datetime">
 							<span class='badge badge-success'>1</span>
@@ -269,7 +275,7 @@
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>@Smoke</h4>
+							<h4>@Smoke@TimeEntry</h4>
 							<span status="pass" class='badge badge-success'>1 passed</span>
 							
 							
@@ -290,9 +296,9 @@
 											<i class="fa fa-check text-white"></i>
 										</div>
 									</td>
-									<td>23:50:02 p. m.</td>
+									<td>18:26:59 p. m.</td>
 									<td class='linked' test-id='1'>
-										Project
+										Time Entry
 									</td>
 								</tr>
 								<tr class="tag-test-status" status="pass">
@@ -301,11 +307,11 @@
 											<i class="fa fa-check text-white"></i>
 										</div>
 									</td>
-									<td>23:50:02 p. m.</td>
+									<td>18:26:59 p. m.</td>
 									<td class='linked' test-id='2'>
-										Unauthorized
+										Get all time entries for user
 										<div class="">
-											<span class="badge badge-default">Project.Unauthorized</span>
+											<span class="badge badge-default">Time Entry.Get all time entries for user</span>
 										</div>
 									</td>
 								</tr>
@@ -316,7 +322,7 @@
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">@Unauthorized</p>
+							<p class="name">@getTimeEntriesForUsers</p>
 							<p class="duration text-sm">1 tests</p>
 							<span class="datetime">
 							<span class='badge badge-success'>1</span>
@@ -328,7 +334,7 @@
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>@Unauthorized</h4>
+							<h4>@getTimeEntriesForUsers</h4>
 							<span status="pass" class='badge badge-success'>1 passed</span>
 							
 							
@@ -349,59 +355,11 @@
 											<i class="fa fa-check text-white"></i>
 										</div>
 									</td>
-									<td>23:50:02 p. m.</td>
+									<td>18:26:59 p. m.</td>
 									<td class='linked' test-id='2'>
-										Unauthorized
+										Get all time entries for user
 										<div class="">
-											<span class="badge badge-default">Project.Unauthorized</span>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</li>
-				<li class="test-item">
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">@Error</p>
-							<p class="duration text-sm">1 tests</p>
-							<span class="datetime">
-							<span class='badge badge-success'>1</span>
-							
-							
-							
-							</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="info">
-							<h4>@Error</h4>
-							<span status="pass" class='badge badge-success'>1 passed</span>
-							
-							
-							
-						</div>
-						<table class='table table-sm mt-4'>
-							<thead>
-								<tr>
-									<th class="status-col">Status</th>
-									<th class="timestamp-col">Timestamp</th>
-									<th>TestName</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="tag-test-status" status="pass">
-									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
-										</div>
-									</td>
-									<td>23:50:02 p. m.</td>
-									<td class='linked' test-id='2'>
-										Unauthorized
-										<div class="">
-											<span class="badge badge-default">Project.Unauthorized</span>
+											<span class="badge badge-default">Time Entry.Get all time entries for user</span>
 										</div>
 									</td>
 								</tr>
@@ -445,11 +403,11 @@
 											<i class="fa fa-check text-white"></i>
 										</div>
 									</td>
-									<td>23:50:02 p. m.</td>
+									<td>18:26:59 p. m.</td>
 									<td class='linked' test-id='2'>
-										Unauthorized
+										Get all time entries for user
 										<div class="">
-											<span class="badge badge-default">Project.Unauthorized</span>
+											<span class="badge badge-default">Time Entry.Get all time entries for user</span>
 										</div>
 									</td>
 								</tr>
@@ -531,7 +489,7 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+					<div><small data-tooltip='100%'><b>7</b> steps passed</small></div>
 					<div>
 						<small data-tooltip='0%'><b>0</b> steps failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
@@ -586,7 +544,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">jun 6, 2025 11:50:01 p. m.</h4>
+							<h4 class="font-weight-light mt-4">jun 14, 2025 06:26:58 p. m.</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -602,7 +560,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 1s+195ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 1s+688ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -647,7 +605,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>@Smoke</td>
+								<td>@Smoke@TimeEntry</td>
 								<td>1</td>
 								<td>0</td>
 								<td>0</td>
@@ -657,17 +615,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>@Unauthorized</td>
-								<td>1</td>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-								<td>
-									100%
-								</td>
-							</tr>
-							<tr>
-								<td>@Error</td>
+								<td>@getTimeEntriesForUsers</td>
 								<td>1</td>
 								<td>0</td>
 								<td>0</td>
@@ -713,8 +661,8 @@
 		infoChild: 0,
 		debugChild: 0,
 		exceptionsChild: 0,
-		grandChildCount: 6,
-		passGrandChild: 6,
+		grandChildCount: 7,
+		passGrandChild: 7,
 		failGrandChild: 0,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
@@ -723,8 +671,8 @@
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 6,
-		passEvents: 6,
+		eventsCount: 7,
+		passEvents: 7,
 		failEvents: 0,
 		fatalEvents: 0,
 		errorEvents: 0,
@@ -737,7 +685,7 @@
 </script>
 <script>
 	var timeline = {
-	        "Project":1.03
+	        "Time Entry":1.528
 	};
 </script>
                 </div>

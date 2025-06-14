@@ -21,14 +21,15 @@ Feature: Time Entry
     Then the status code should be 200
     * define projectId = $.[0].id
 
-  @getTimeEntriesForUsers @Do
-    Scenario: Get all time entries for user
+  @getTimeEntriesForUsers
+  Scenario: Get all time entries for user
     Given call Project.feature@getAllWorkspaces
     Given call TimeEntry.feature@getUserId
     And endpoint /v1/workspaces/{{idWorkspace}}/user/{{userId}}/time-entries
     And header x-api-key = "YTFlNWYzOGUtODdkYS00NzI3LWJkZjYtNDM1ZDRiMTUyYmIx"
     When execute method GET
     Then the status code should be 200
+    * define timeEntryId = $.[0].id
 
   @addNeTimeEntry
   Scenario: Add hours to a project
@@ -41,3 +42,15 @@ Feature: Time Entry
     And set value 2025-06-14T17:08:00Z of key end in body jsons/bodies/addTimeEntry.json
     When execute method POST
     Then the status code should be 201
+
+  @updateTimeEntry @Do
+  Scenario: Update time entry
+    Given call TimeEntry.feature@getTimeEntriesForUsers
+    And endpoint /v1/workspaces/{{idWorkspace}}/time-entries/{{timeEntryId}}
+    And header x-api-key = "YTFlNWYzOGUtODdkYS00NzI3LWJkZjYtNDM1ZDRiMTUyYmIx"
+    And header Content-Type = "application/json"
+    And set value 2025-06-14T12:02:00Z of key start in body jsons/bodies/addTimeEntry.json
+    And set value 2025-06-14T21:08:00Z of key end in body jsons/bodies/addTimeEntry.json
+    When execute method PUT
+    Then the status code should be 200
+    And response should be $.id = {{timeEntryId}}

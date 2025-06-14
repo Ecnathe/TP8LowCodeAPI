@@ -1,0 +1,6 @@
+{
+  "start": "2020-01-01T00:00:00Z",
+  "end": "2021-01-01T00:00:00Z",
+  "description": "This is a sample time entry description.",
+  "billable": true
+}
